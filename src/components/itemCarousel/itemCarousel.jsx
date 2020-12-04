@@ -1,0 +1,92 @@
+import React from "react";
+import { useSelector } from "react-redux";
+
+// import Swiper core and required components
+import SwiperCore, { Navigation, Autoplay, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+
+import "./itemCarousel.scss";
+
+// install Swiper components
+SwiperCore.use([Navigation, Autoplay, A11y]);
+
+function ItemCarousel({ items, carouselName }) {
+  const moviesGenres = useSelector((state) => state.moviesGenres.data);
+
+  const getGenres = (ids) => {
+    const genresArr = moviesGenres.filter((genre) =>
+      genre.id === ids[0] || genre.id === ids[1] ? genre.name : null
+    );
+    return `${genresArr[0] ? `${genresArr[0].name} |` : ""}  ${
+      genresArr[1] ? `${genresArr[1].name}` : ""
+    }`;
+  };
+
+  if (items.length) {
+    return (
+      <div>
+        <h2 className='title-carousel'>{carouselName}</h2>
+        <Swiper
+          id='main'
+          observer='true'
+          slidesPerView={2}
+          spaceBetween={10}
+          loop='true'
+          observeparents='true'
+          navigation
+          centeredSlides='true'
+          breakpoints={{
+            300: {
+              slidesPerView: 3,
+            },
+            400: {
+              slidesPerView: 4,
+            },
+            640: {
+              slidesPerView: 4,
+            },
+            700: {
+              slidesPerView: 5,
+              centeredSlides: true,
+            },
+            900: {
+              slidesPerView: 6,
+            },
+            1100: {
+              slidesPerView: 7,
+            },
+          }}
+          className='item-carousel'
+        >
+          {items.map(({ poster_path, title, vote_average, id, genre_ids }) => (
+            <SwiperSlide key={id}>
+              <div className='item'>
+                <img
+                  src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                  alt='Fatman'
+                />
+                <h3 className='title'>{title}</h3>
+                <div className='add_data'>
+                  <div className='genre'>{getGenres(genre_ids)}</div>
+                  <div className='rating'>
+                    <i className='fas fa-star star'></i>
+                    {vote_average}
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+          <div className='bg-shadow'></div>
+        </Swiper>
+        <div className='separator'></div>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+export default ItemCarousel;
