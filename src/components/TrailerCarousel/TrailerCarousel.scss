@@ -1,0 +1,45 @@
+.title-trailer-carousel {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background-color: #0d0c11;
+  color: #fff;
+}
+
+.trailer-carousel {
+  color: #fff;
+  height: auto;
+  margin: 2rem 0;
+  padding-top: 2rem;
+  padding-left: 1.6rem;
+  position: relative;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 50%;
+  }
+
+  iframe {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    height: 220px;
+    width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .trailer-carousel {
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 55%;
+    }
+    iframe {
+      height: 170px;
+      width: 300px;
+    }
+  }
+}

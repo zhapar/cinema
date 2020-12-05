@@ -88,6 +88,45 @@
       }
     }
   }
+  .noFound {
+    margin-top: 5rem;
+    background: lighten(#0d0c11, 5);
+    font-size: 3rem;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  .reviews {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    .title-reviews {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+      padding-left: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      background-color: #0d0c11;
+      color: #fff;
+    }
+    .review {
+      background: lighten(#0d0c11, 5);
+      border-radius: 10px;
+      line-height: 25px;
+      margin: 1.5rem 0;
+      padding: 1rem 2rem;
+      .author {
+        font-size: 2rem;
+        padding: 1rem;
+      }
+      .text {
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+    }
+  }
 }
 
 @media (max-width: 900px) {
@@ -151,6 +190,26 @@
           .number {
             font-size: 1.5rem;
           }
+        }
+      }
+    }
+    .noFound {
+      font-size: 2rem;
+    }
+    .reviews {
+      margin-bottom: 2rem;
+      .review {
+        line-height: 15px;
+        margin: 1.5rem 1rem;
+        padding: 1rem 1rem;
+        .author {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+        .text {
+          overflow: hidden;
+          font-size: 1.2rem;
+          padding: 1rem;
         }
       }
     }

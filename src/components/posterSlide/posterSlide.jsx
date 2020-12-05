@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./PosterSlide.scss";
 
-function PosterSlide({ title, description, imageUrl, rating, genreIds }) {
+function PosterSlide({ title, description, imageUrl, rating, genreIds, id }) {
   const moviesGenres = useSelector((state) => state.moviesGenres.data);
 
   let genres = "";
@@ -34,9 +35,9 @@ function PosterSlide({ title, description, imageUrl, rating, genreIds }) {
               <i className='fas fa-star'></i> {rating}
             </div>
           </div>
-          <a href='#' className='watch-button'>
+          <Link to={`/movie/${id}`} className='watch-button'>
             <i className='fas fa-play'></i> WATCH
-          </a>
+          </Link>
         </div>
       </div>
     </div>

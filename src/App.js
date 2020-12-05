@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMoviesGenres } from "./store/moviesGenres";
 import "./App.css";
@@ -20,8 +21,10 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <HomePage /> */}
-      <MovieDetails />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/movie/:id' component={MovieDetails} />
+      </Switch>
       <Footer />
     </>
   );

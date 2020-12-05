@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 // import Swiper core and required components
@@ -59,7 +60,7 @@ function ItemCarousel({ items, carouselName }) {
         >
           {items.map(({ poster_path, title, vote_average, id, genre_ids }) => (
             <SwiperSlide key={id}>
-              <div className='item'>
+              <Link to={`/movie/${id}`} className='item'>
                 <img
                   src={`https://image.tmdb.org/t/p/w300${poster_path}`}
                   alt='Fatman'
@@ -72,7 +73,7 @@ function ItemCarousel({ items, carouselName }) {
                     {vote_average}
                   </div>
                 </div>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
           <div className='bg-shadow'></div>

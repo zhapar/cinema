@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.scss";
 
@@ -6,7 +7,9 @@ function Navbar() {
   return (
     <nav className='navbar'>
       <div className='container-wrap'>
-        <div className='logo'>Netfilm</div>
+        <Link to='/' className='logo'>
+          Netfilm
+        </Link>
         <a href='#' className='link'>
           Movies
         </a>
