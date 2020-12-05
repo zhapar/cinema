@@ -5,6 +5,7 @@ import { fetchMoviesGenres } from "./store/moviesGenres";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/Home/Home";
+import SearchResults from "./pages/SearchResults/SearchResults";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
 import Footer from "./components/Footer/Footer";
 
@@ -24,6 +25,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/movie/:id' component={MovieDetails} />
+        <Route exact path='/search-results/:name' component={SearchResults} />
+        <Redirect to='/' />
       </Switch>
       <Footer />
     </>

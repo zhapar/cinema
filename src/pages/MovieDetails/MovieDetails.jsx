@@ -3,6 +3,8 @@ import PeopleCarousel from "../../components/PeopleCarousel/PeopleCarousel";
 import TrailerCarousel from "../../components/TrailerCarousel/TrailerCarousel";
 import { api_key } from "../../store/constants";
 
+import noImage from "../../images/no-image.png";
+
 import "./MovieDetails.scss";
 
 function MovieDetails({ match }) {
@@ -85,8 +87,12 @@ function MovieDetails({ match }) {
         <div className='container-wrap'>
           <div className='movieDescription'>
             <img
-              src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-              alt=''
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w300${poster_path}`
+                  : noImage
+              }
+              alt={title}
               className='moviePoster'
             />
             <div className='movieText'>

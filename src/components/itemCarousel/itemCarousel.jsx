@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import noImage from "../../images/no-image.png";
+
 // import Swiper core and required components
 import SwiperCore, { Navigation, Autoplay, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,9 +23,11 @@ function ItemCarousel({ items, carouselName }) {
     const genresArr = moviesGenres.filter((genre) =>
       genre.id === ids[0] || genre.id === ids[1] ? genre.name : null
     );
-    return `${genresArr[0] ? `${genresArr[0].name} |` : ""}  ${
-      genresArr[1] ? `${genresArr[1].name}` : ""
-    }`;
+    let genresName = "";
+    if (genresArr.length === 1) genresName = genresArr[0].name;
+    else if (genresArr.length > 1)
+      genresName = `${genresArr[0].name} | ${genresArr[1].name}`;
+    return genresName;
   };
 
   if (items.length) {
@@ -62,8 +66,12 @@ function ItemCarousel({ items, carouselName }) {
             <SwiperSlide key={id}>
               <Link to={`/movie/${id}`} className='item'>
                 <img
-                  src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-                  alt='Fatman'
+                  src={
+                    poster_path
+                      ? `https://image.tmdb.org/t/p/w300${poster_path}`
+                      : noImage
+                  }
+                  alt={title}
                 />
                 <h3 className='title'>{title}</h3>
                 <div className='add_data'>
