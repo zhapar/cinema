@@ -1,0 +1,158 @@
+.movieDetails {
+  color: #fff;
+  .movieBg {
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+
+    .darkBg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000000, 0.2);
+      -webkit-box-shadow: inset 0px -65px 150px 15px rgba(0, 0, 0, 0.86);
+      -moz-box-shadow: inset 0px -65px 150px 15px rgba(0, 0, 0, 0.86);
+      box-shadow: inset 0px -65px 150px 15px rgba(0, 0, 0, 0.86);
+    }
+  }
+  .movieDescription {
+    position: relative;
+    margin-top: -20rem;
+    padding: 2rem 3rem;
+    width: 70%;
+    display: flex;
+    align-items: center;
+
+    .moviePoster {
+      width: 200px;
+    }
+
+    .movieText {
+      padding: 1rem 2rem;
+
+      .title {
+        font-size: 4rem;
+      }
+
+      .description {
+        padding: 1rem 0;
+        font-size: 1.5rem;
+      }
+      .genre {
+        font-size: 1.5rem;
+        color: lightgrey;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .rating-outer {
+          position: relative;
+          display: inline-block;
+
+          &::before {
+            content: "\f005 \f005 \f005 \f005 \f005 \f005 \f005 \f005 \f005 \f005";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 2rem;
+            color: #ccc;
+          }
+          .rating-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+
+            &::before {
+              content: "\f005 \f005 \f005 \f005 \f005 \f005 \f005 \f005 \f005 \f005";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              font-size: 2rem;
+              color: #f3cf04;
+            }
+          }
+        }
+
+        .number {
+          font-size: 1.7rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .movieDetails {
+    .movieBg {
+      height: 400px;
+    }
+    .movieDescription {
+      padding: 2rem 4rem;
+      width: 90%;
+
+      .moviePoster {
+        width: 150px;
+      }
+
+      .movieText {
+        padding: 1rem 2rem;
+
+        .title {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .movieDetails {
+    .movieDescription {
+      flex-direction: column;
+      margin-top: -30rem;
+      width: 100%;
+
+      .moviePoster {
+        width: 200px;
+      }
+
+      .movieText {
+        .title {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        .description {
+          font-size: 1.2rem;
+        }
+        .rating {
+          .rating-outer {
+            &::before {
+              font-size: 1.5rem;
+            }
+            .rating-inner {
+              width: 71%;
+
+              &::before {
+                font-size: 1.5rem;
+              }
+            }
+          }
+
+          .number {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

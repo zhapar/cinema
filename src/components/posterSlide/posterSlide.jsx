@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./posterSlide.scss";
+import "./PosterSlide.scss";
 
 function PosterSlide({ title, description, imageUrl, rating, genreIds }) {
   const moviesGenres = useSelector((state) => state.moviesGenres.data);

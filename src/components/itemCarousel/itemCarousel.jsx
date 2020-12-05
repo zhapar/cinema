@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 
-import "./itemCarousel.scss";
+import "./ItemCarousel.scss";
 
 // install Swiper components
 SwiperCore.use([Navigation, Autoplay, A11y]);
@@ -30,7 +30,7 @@ function ItemCarousel({ items, carouselName }) {
       <div>
         <h2 className='title-carousel'>{carouselName}</h2>
         <Swiper
-          id='main'
+          id='items'
           observer='true'
           slidesPerView={2}
           spaceBetween={10}
@@ -45,12 +45,8 @@ function ItemCarousel({ items, carouselName }) {
             400: {
               slidesPerView: 4,
             },
-            640: {
-              slidesPerView: 4,
-            },
             700: {
               slidesPerView: 5,
-              centeredSlides: true,
             },
             900: {
               slidesPerView: 6,

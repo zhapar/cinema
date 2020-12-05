@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import PosterSlide from "../posterSlide/posterSlide";
+import PosterSlide from "../PosterSlide/PosterSlide";
 
 // import Swiper core and required components
 import SwiperCore, { Navigation, Pagination, Autoplay, A11y } from "swiper";
@@ -25,7 +25,7 @@ function HomeHeader() {
         loop='true'
         observeparents='true'
         autoplay={{ delay: 5000 }}
-        pagination
+        pagination={{ clickable: true }}
       >
         {nowPlayingMovies.map(
           ({ id, title, overview, vote_average, backdrop_path, genre_ids }) => (

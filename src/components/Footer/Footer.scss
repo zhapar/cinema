@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  padding: 2rem;
+  padding-bottom: 3rem;
+  font-size: 1.5rem;
+
+  img.logoDB {
+    width: 200px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    flex-direction: column;
+
+    img.logoDB {
+      margin-top: 1.5rem;
+    }
+  }
+}

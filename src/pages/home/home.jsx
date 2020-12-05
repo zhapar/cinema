@@ -5,10 +5,10 @@ import { fetchMoviesUpcoming } from "../../store/moviesUpcoming";
 import { fetchMoviesPopular } from "../../store/moviesPopular";
 import { fetchMoviesTopRated } from "../../store/moviesTopRated";
 
-import HomeHeader from "../../components/homeHeader/homeHeader";
-import ItemCarousel from "../../components/itemCarousel/itemCarousel";
+import HomeHeader from "../../components/HomeHeader/HomeHeader";
+import ItemCarousel from "../../components/ItemCarousel/ItemCarousel";
 
-import "./home.scss";
+import "./Home.scss";
 
 function HomePage() {
   const moviesUpcoming = useSelector((state) => state.moviesUpcoming.data);
