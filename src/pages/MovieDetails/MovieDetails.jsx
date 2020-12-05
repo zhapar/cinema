@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../../components/Loader/Loader";
 import PeopleCarousel from "../../components/PeopleCarousel/PeopleCarousel";
 import TrailerCarousel from "../../components/TrailerCarousel/TrailerCarousel";
 import { api_key } from "../../store/constants";
@@ -74,6 +75,8 @@ function MovieDetails({ match }) {
     const rating = `${vote_average * 10}%`;
 
     return (
+      <>
+      <Loader/>
       <div className='movieDetails'>
         <div
           className='movieBg'
@@ -132,9 +135,10 @@ function MovieDetails({ match }) {
           </div>
         </div>
       </div>
+      </>
     );
   }
-  return null;
+  return <Loader/>;
 }
 
 export default MovieDetails;

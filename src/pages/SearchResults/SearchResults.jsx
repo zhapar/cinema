@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../../components/Loader/Loader";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { api_key } from "../../store/constants";
@@ -123,6 +124,8 @@ function SearchResults({ match }) {
     );
 
     return (
+      <>
+      <Loader/>
       <div className='searchResults'>
         <div className='container-wrap'>
           <h1 className='titleSearch'>Search Results For Your Name</h1>
@@ -134,9 +137,10 @@ function SearchResults({ match }) {
           <div className='pageButtons'>{pageButtons}</div>
         </div>
       </div>
+      </>
     );
   }
-  return null;
+  return <Loader/>;
 }
 
 export default SearchResults;

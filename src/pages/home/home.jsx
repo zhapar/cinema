@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Loader from "../../components/Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchMoviesNowPlaying } from "../../store/moviesNowPlaying";
 import { fetchMoviesUpcoming } from "../../store/moviesUpcoming";
@@ -33,10 +34,13 @@ function HomePage() {
     </>
   );
   return (
-    <div className='home-page'>
-      <HomeHeader />
-      <div className='container-wrap'>{movies}</div>
-    </div>
+    <>
+      <Loader />
+      <div className='home-page'>
+        <HomeHeader />
+        <div className='container-wrap'>{movies}</div>
+      </div>
+    </>
   );
 }
 
