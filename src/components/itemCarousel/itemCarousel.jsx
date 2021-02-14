@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import noImage from "../../images/no-image.png";
 
 // import Swiper core and required components
 import SwiperCore, { Navigation, Autoplay, A11y } from "swiper";
@@ -62,8 +63,12 @@ function ItemCarousel({ items, carouselName }) {
             <SwiperSlide key={id}>
               <Link to={`/movie/${id}`} className='item'>
                 <img
-                  src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-                  alt='Fatman'
+                  src={
+                    poster_path
+                      ? `https://image.tmdb.org/t/p/w300${poster_path}`
+                      : noImage
+                  }
+                  alt={title}
                 />
                 <h3 className='title'>{title}</h3>
                 <div className='add_data'>
